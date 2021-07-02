@@ -1,6 +1,6 @@
 import express from "express";
 import {Recipes} from "../models/Recipes.js";
-import bcrypt from "bcrypt";
+// import bcrypt from "bcrypt";
 const router = express.Router();
 
 router
@@ -38,15 +38,15 @@ router.get("/:id",async(request,respone)=>{
     respone.send(recipe);
 });
 
-async function genHash(){
-    const password = 'password@123';
-    const salt = await bcrypt.genSalt(10);
-    const passwordHash = await bcrypt.hash(password,salt);
-    console.log(salt,passwordHash);
-}
+// async function genHash(){
+//     const password = 'password@123';
+//     const salt = await bcrypt.genSalt(10);
+//     const passwordHash = await bcrypt.hash(password,salt);
+//     console.log(salt,passwordHash);
+// }
 
 
-genHash();
+// genHash();
 
 
 export default router;
